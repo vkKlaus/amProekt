@@ -1,0 +1,492 @@
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('/template/fonts/BebasNeue-webfont.eot');
+    src: url('/template/fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+        url('/template/fonts/BebasNeue-webfont.woff') format('woff'),
+        url('/template/fonts/BebasNeue-webfont.ttf') format('truetype'),
+        url('/template/fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Zelek;
+    src: url(/template/fonts/New_Zelek.ttf);
+}
+
+@font-face {
+    font-family: CuprumBold;
+    src: url(/template/fonts/Cuprum-Bold.ttf);
+}
+
+@font-face {
+    font-family: Contra;
+    src: url(/template/fonts/Contra.otf);
+}
+
+/* CSS reset */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+input {
+    border: 1px solid #b0b0b0;
+    padding: 3px 5px 4px;
+    color: #979797;
+    width: 190px;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+th,
+var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+caption,
+th {
+    text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+q:before,
+q:after {
+    content: '';
+}
+
+abbr,
+acronym {
+    border: 0;
+}
+
+/* General Style */
+
+html {
+    min-height: 100%
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    font: 15px Tahoma;
+    color: #fff;
+    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.body_slides {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: -2;
+    background-image: url(/template/images/BackGround1.png);
+}
+
+.body_slides,
+.body_slides:after {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.body_slides:after {
+    content: '';
+    background: transparent url(/template/images/pattern.png) repeat top left;
+}
+
+@-webkit-keyframes anim_slides {
+    0% {
+        opacity: 0;
+    }
+
+    0.5% {
+        opacity: 1;
+    }
+
+    6.5% {
+        opacity: 1;
+    }
+
+    7% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.body_slides li {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-repeat: none;
+    opacity: 0;
+}
+
+.body_slides li p {
+    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    position: absolute;
+    color: rgba(255, 0, 0, 0.71);
+    font-size: 20px;
+    font-weight: 600;
+    bottom: 60px;
+    margin-left: 35px;
+    background-color: rgba(4, 1, 83, 0.54);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+header {
+    z-index: 99;
+    height: 90px;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.54);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+}
+
+header #logo {
+    align-self: center;
+    padding-left: 3em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    text-decoration: none;
+}
+
+header #logo img {
+    display: inline-block;
+    height: 65px;
+}
+
+header #logo #sloganTxt {
+    display: inline-block;
+    color: #fff;
+}
+
+
+header #logo #sloganTxt #name {
+    align-self: end;
+    font-size: 40px;
+    font-family: Zelek;
+}
+
+header #logo #sloganTxt #name span {
+    font-weight: 900;
+    color: rgb(255, 0, 0);
+    font-size: 45px;
+}
+
+header #logo #sloganTxt #slogan {
+    text-align: right;
+    font-size: 15px;
+    margin-top: -10px;
+}
+
+
+header #nav {
+    align-self: flex-end;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+}
+
+header #nav a {
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    list-style: none;
+    text-decoration: none;
+}
+
+footer {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.54);
+    bottom: 0;
+    text-align: right;
+    height: 50px;
+    width: 100%;
+    z-index: 99;
+}
+
+#footer p {
+    padding-top: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+
+
+}
+
+#aboutContainer {
+    width: 80%;
+    overflow: auto;
+    z-index: -1;
+    position: absolute;
+    display: flex;
+    left: 10%;
+    top: 100px;
+}
+
+
+#aboutText {
+    align-self: center;
+    padding: 20px 20px 20px 20px;
+    /*    font-family: CuprumBold;*/
+    color: rgb(f2, f2, f2);
+    background-color: rgba(54, 54, 54, 0.76);
+
+
+}
+
+#aboutText h2 {
+    color: #a02a2a;
+    font-size: 25px;
+    /*    font-family: Contra;*/
+    text-decoration: underline;
+}
+
+#aboutText p {
+    text-indent: 20px;
+    line-height: 1.1;
+    letter-spacing: 1.5px;
+    font-size: 1.2em;
+}
+
+#aboutText p:first-letter {
+    font-size: 2em;
+    color: #ff0000;
+    /*    font-family: Contra;*/
+
+}
+
+#aboutText b {
+    color: red;
+    font-size: 1.2em;
+}
+
+#aboutText a {
+    font-size: 1.2em;
+    font-family: Contra;
+    color: rgb(172, 67, 11);
+    text-decoration: none;
+
+}
+
+#aboutContact {
+    align-self: center;
+    padding: 20px 20px 20px 20px;
+    background-color: rgba(54, 54, 54, 0.76);
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "adres map"
+        "tel   map"
+        "mail  map";
+    font-size: 2vh;
+    font-family: Arial;
+}
+
+
+#aboutContact a {
+    display: inline-block;
+    color: aliceblue;
+    padding: 10px;
+
+    text-decoration: none;
+}
+
+#adres {
+    grid-area: adres;
+    align-self: flex-end;
+}
+
+#tel {
+    grid-area: tel;
+    align-self: center;
+}
+
+#mail {
+    grid-area: mail;
+    align-self: flex-start;
+}
+
+#map {
+    grid-area: map;
+    padding: 30px;
+}
+
+#projectContainer {
+    width: 90%;
+    z-index: -1;
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+    top: 90px;
+    bottom: 90px;
+    left: 5%;
+}
+
+#projectContainer a {
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: rgba(67, 67, 67, 0.58);
+    border-radius: 15px;
+    margin: 10px;
+
+
+}
+
+
+.galeryContaner {
+    width: 80%;
+    margin-left: 10%;
+    z-index: 1;
+    position: relative;
+    display: grid;
+    grid-template-rows: repeat(7, auto);
+    grid-template-columns: 70% 30%;
+    grid-template-areas: "title title"
+        "header header"
+        "pic    data";
+    justify-content: center;
+    align-items: stretch;
+    background-color: rgba(0, 0, 0, 0.7)
+}
+
+.titleSection {
+    padding-top: 1em;
+    font-size: 1.8em;
+}
+
+.blockSection {
+    padding-right: 13px;
+    text-indent: 20px;
+    font-size: 1.3em;
+}
+
+.title {
+    grid-area: title;
+    margin-top: 90px;
+    text-align: center;
+    font-size: 3em;
+}
+
+.heder {
+    grid-area: header;
+    margin-bottom: 1%;
+
+}
+
+.heder p {
+    text-indent: 20px;
+    font-size: 1.5em;
+    padding-left: 2%;
+    padding-right: 2%;
+
+}
+
+.sectionDate {
+    grid-area: data;
+    margin-bottom: 90px;
+}
+
+
+.volume ul li:before {
+    content: "- ";
+}
+
+
+#galeray {
+    grid-area: pic;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 90px;
+
+}
+
+.docsBox a {
+    width: 15%;
+    height: 15%;
+    margin: 2px;
+}
+
+.docsBox a img {}
